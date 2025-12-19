@@ -8,54 +8,23 @@
 </head>
 <body class="landing">
     <div id="video-container">
-        <div id="player"></div>
+        <video id="landing-video" autoplay muted playsinline>
+            <source src="images/PARKOUR.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <script>
-        // YouTube IFrame API
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        // Redirect to home after 10 seconds
+        setTimeout(function() {
+            window.location.href = 'home.html';
+        }, 10000);
 
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                videoId: '0Kvw2BPKjz0',
-                playerVars: {
-                    'autoplay': 1,
-                    'controls': 0,
-                    'mute': 1,
-                    'start': 4,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'iv_load_policy': 3,
-                    'disablekb': 1,
-                    'playsinline': 1
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            event.target.playVideo();
-            // Redirect to home after 10 seconds
-            setTimeout(function() {
-                window.location.href = 'home.html';
-            }, 10000);
-        }
-
-        function onPlayerStateChange(event) {
-            // YT.PlayerState.ENDED = 0
-            // If video ends before 10 seconds, redirect immediately
-            if (event.data === 0) {
-                window.location.href = 'home.html';
-            }
-        }
+        // Or redirect when video ends (if shorter than 10 seconds)
+        var video = document.getElementById('landing-video');
+        video.addEventListener('ended', function() {
+            window.location.href = 'home.html';
+        });
     </script>
 </body>
 </html>

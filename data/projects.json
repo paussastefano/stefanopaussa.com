@@ -1,0 +1,63 @@
+[
+  {
+    "id": "project-1",
+    "title": "Commercial Project Alpha",
+    "role": "Editor",
+    "category": "editing",
+    "thumbnail": "images/projects/project-1-thumb.jpg",
+    "videoUrl": "https://www.youtube.com/embed/U2_1B0v_X_Q",
+    "description": "A dynamic commercial project showcasing modern editing techniques and storytelling.",
+    "credits": [
+      { "role": "Director", "name": "Mario Rossi" },
+      { "role": "Editor", "name": "Stefano Paussa" },
+      { "role": "DOP", "name": "Laura Bianchi" },
+      { "role": "Producer", "name": "Giovanni Verdi" },
+      { "role": "Client", "name": "Brand Name S.p.A." }
+    ]
+  },
+  {
+    "id": "project-2",
+    "title": "Documentary: Milano Stories",
+    "role": "Director / Videographer",
+    "category": "videography",
+    "thumbnail": "images/projects/project-2-thumb.jpg",
+    "videoUrl": "https://www.youtube.com/embed/U2_1B0v_X_Q",
+    "description": "A short documentary exploring the hidden corners of Milano through intimate portraits.",
+    "credits": [
+      { "role": "Director", "name": "Stefano Paussa" },
+      { "role": "Videographer", "name": "Stefano Paussa" },
+      { "role": "Sound Design", "name": "Paolo Neri" },
+      { "role": "Producer", "name": "Anna Colombo" }
+    ]
+  },
+  {
+    "id": "project-3",
+    "title": "Fashion Editorial 2024",
+    "role": "Photographer",
+    "category": "photography",
+    "thumbnail": "images/photography/project-3-thumb.jpg",
+    "videoUrl": "",
+    "description": "Fashion photography series for a leading Italian magazine.",
+    "credits": [
+      { "role": "Photographer", "name": "Stefano Paussa" },
+      { "role": "Stylist", "name": "Francesca Moretti" },
+      { "role": "Model", "name": "Giulia Romano" },
+      { "role": "Magazine", "name": "Vogue Italia" }
+    ]
+  },
+  {
+    "id": "project-4",
+    "title": "Music Video: Indie Artist",
+    "role": "Editor / Colorist",
+    "category": "editing",
+    "thumbnail": "images/projects/project-4-thumb.jpg",
+    "videoUrl": "https://www.youtube.com/embed/U2_1B0v_X_Q",
+    "description": "Music video featuring experimental editing and color grading techniques.",
+    "credits": [
+      { "role": "Director", "name": "Luca Ferrari" },
+      { "role": "Editor", "name": "Stefano Paussa" },
+      { "role": "Colorist", "name": "Stefano Paussa" },
+      { "role": "Artist", "name": "The Sounds" }
+    ]
+  }
+]

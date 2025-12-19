@@ -80,6 +80,29 @@ body.landing {
     object-fit: cover;
 }
 
+#play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#play-btn svg {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
 /* Header */
 header {
     padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);

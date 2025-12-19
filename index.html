@@ -8,21 +8,38 @@
 </head>
 <body class="landing">
     <div id="video-container">
-        <video id="landing-video" autoplay muted playsinline>
+        <video id="landing-video" playsinline>
             <source src="images/PARKOUR.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <button id="play-btn" aria-label="Play video">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="28" stroke="white" stroke-width="2"/>
+                <path d="M23 18L23 42L42 30L23 18Z" fill="white"/>
+            </svg>
+        </button>
     </div>
 
     <script>
-        // Redirect to home after 10 seconds
-        setTimeout(function() {
-            window.location.href = 'home.html';
-        }, 10000);
-
-        // Or redirect when video ends (if shorter than 10 seconds)
         var video = document.getElementById('landing-video');
+        var playBtn = document.getElementById('play-btn');
+        var redirectTimer;
+
+        // Play button functionality
+        playBtn.addEventListener('click', function() {
+            video.play();
+            playBtn.style.opacity = '0';
+            playBtn.style.pointerEvents = 'none';
+
+            // Start redirect timer after video starts
+            redirectTimer = setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 10000);
+        });
+
+        // Redirect when video ends (if shorter than 10 seconds)
         video.addEventListener('ended', function() {
+            clearTimeout(redirectTimer);
             window.location.href = 'home.html';
         });
     </script>

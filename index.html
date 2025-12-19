@@ -23,23 +23,16 @@
     <script>
         var video = document.getElementById('landing-video');
         var playBtn = document.getElementById('play-btn');
-        var redirectTimer;
 
         // Play button functionality
         playBtn.addEventListener('click', function() {
             video.play();
             playBtn.style.opacity = '0';
             playBtn.style.pointerEvents = 'none';
-
-            // Start redirect timer after video starts
-            redirectTimer = setTimeout(function() {
-                window.location.href = 'home.html';
-            }, 10000);
         });
 
-        // Redirect when video ends (if shorter than 10 seconds)
+        // Redirect when video ends
         video.addEventListener('ended', function() {
-            clearTimeout(redirectTimer);
             window.location.href = 'home.html';
         });
     </script>

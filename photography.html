@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Stefano Paussa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="page-nav">
+            <a href="home.html" class="nav-item">Stefano Paussa</a>
+            <a href="works.html" class="nav-item">Works</a>
+            <a href="photography.html" class="nav-item active">Photography</a>
+            <a href="about.html" class="nav-item">About</a>
+        </nav>
+    </header>
+
+    <main class="photography-main">
+        <div class="photography-grid" id="photography-grid">
+            <!-- Images will be loaded dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // Load photography images from JSON
+        async function loadPhotography() {
+            try {
+                const response = await fetch('data/projects.json');
+                const projects = await response.json();
+
+                // Filter only photography projects
+                const photoProjects = projects.filter(p => p.category === 'photography');
+
+                renderPhotographyGrid(photoProjects);
+            } catch (error) {
+                console.error('Error loading photography:', error);
+            }
+        }
+
+        // Render photography grid
+        function renderPhotographyGrid(projects) {
+            const grid = document.getElementById('photography-grid');
+            grid.innerHTML = '';
+
+            projects.forEach(project => {
+                const item = document.createElement('div');
+                item.className = 'photo-item';
+
+                item.innerHTML = `
+                    <img src="${project.thumbnail}" alt="${project.title}" onerror="this.src='https://via.placeholder.com/800x600'">
+                `;
+
+                grid.appendChild(item);
+            });
+        }
+
+        // Load on page load
+        loadPhotography();
+    </script>
+</body>
+</html>

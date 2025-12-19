@@ -105,6 +105,38 @@ header nav a.active {
     text-decoration: underline;
 }
 
+/* Page Header (for non-home pages) */
+.page-header {
+    padding: var(--spacing-md);
+    background-color: var(--color-bg);
+}
+
+.page-nav {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.page-nav .nav-item {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.page-nav .nav-item:hover {
+    opacity: 0.6;
+}
+
+.page-nav .nav-item:first-child {
+    font-weight: 500;
+}
+
+.page-nav .nav-item.active {
+    text-decoration: underline;
+}
+
 /* Home Page */
 .home-body {
     margin: 0;
@@ -351,6 +383,35 @@ header nav a.active {
     font-weight: 500;
 }
 
+/* Photography Page */
+.photography-main {
+    padding: var(--spacing-md);
+}
+
+.photography-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.photo-item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.02);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header {
@@ -377,5 +438,16 @@ header nav a.active {
 
     .filter-bar {
         flex-wrap: wrap;
+    }
+
+    .page-nav {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        align-items: flex-start;
+    }
+
+    .photography-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
 }

@@ -43,10 +43,15 @@
 
         function onPlayerReady(event) {
             event.target.playVideo();
+            // Redirect to home after 10 seconds
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 10000);
         }
 
         function onPlayerStateChange(event) {
             // YT.PlayerState.ENDED = 0
+            // If video ends before 10 seconds, redirect immediately
             if (event.data === 0) {
                 window.location.href = 'home.html';
             }
